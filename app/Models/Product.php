@@ -15,10 +15,16 @@ class Product extends Model
         'description',
         'price',
         'sku',
+        'file',
     ];
 
     public function inventory()
     {
         return $this->hasOne(Inventory::class);
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }

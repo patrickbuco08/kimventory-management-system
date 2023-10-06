@@ -5,7 +5,7 @@
     <title>Product</title>
 </head>
 <body>
-<form action="{{ route('product') }}" method="POST">
+<form action="{{ route('product') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="name">Name:</label>
     <input type="name" id="name" name="name" required>
@@ -28,7 +28,10 @@
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required>
     <br>
-    <button type="submit">Login</button>
+    <label for="file">Upload a picture:</label>
+    <input type="file" id="file" name="file" required>
+    <br>
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>

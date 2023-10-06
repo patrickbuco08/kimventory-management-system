@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         $remember = $request->has('remember');
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
-            return redirect()->intended('/'); // Redirect to intended page or homepage
+            return redirect()->intended('/dashboard'); 
         }
 
         return back()->withErrors([
